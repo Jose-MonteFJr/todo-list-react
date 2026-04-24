@@ -9,41 +9,66 @@ import SpinnerIcon from "./assets/icons/spinner.svg?react";
 import Icon from "./components/icon";
 import Badge from "./components/badge";
 import Button from "./components/button";
+import ButtonIcon from "./components/button-icon";
+import InputText from "./components/input-text";
+import InputCheckbox from "./components/input-checkbox";
+import Card from "./components/card";
+import Container from "./components/container";
 
 export default function App() {
 	return (
-		<div className="grid gap-3">
-			<div className="flex flex-col gap-2">
-				<Text variant="body-md-bold" className="text-pink-dark">
-					Ola mundo
-				</Text>
+		<Container>
+			<div className="grid gap-10">
+				<div className="flex flex-col gap-2">
+					<Text variant="body-md-bold" className="text-pink-dark">
+						Ola mundo
+					</Text>
 
-				<Text className="text-pink-light">Ola mundo</Text>
+					<Text className="text-pink-light">Ola mundo</Text>
 
-				<Text variant="body-sm-bold" className="text-gray-300">
-					Ola mundo
-				</Text>
+					<Text variant="body-sm-bold" className="text-gray-300">
+						Ola mundo
+					</Text>
 
-				<Text>Levar o dog para passear</Text>
+					<Text>Levar o dog para passear</Text>
+				</div>
+
+				<div className="flex gap-1">
+					<Icon svg={TrashIcon} className="fill-pink-dark" />
+					<Icon svg={CheckIcon} className="fill-pink-dark" />
+					<Icon svg={PencilIcon} className="fill-pink-dark" />
+					<Icon svg={PlusIcon} className="fill-pink-dark" />
+					<Icon svg={XIcon} className="fill-pink-dark" />
+					<Icon svg={SpinnerIcon} animate />
+				</div>
+
+				<div>
+					<Badge variant="primary">2 de 5</Badge>
+					<Badge variant="secondary">5</Badge>
+				</div>
+
+				<div>
+					<Button icon={PlusIcon}>Testando butao</Button>
+				</div>
+
+				<div className="flex gap-1">
+					<ButtonIcon icon={TrashIcon} />
+					<ButtonIcon icon={TrashIcon} variant="secondary" />
+					<ButtonIcon icon={TrashIcon} variant="tertiary" />
+				</div>
+
+				<div>
+					<InputText />
+				</div>
+
+				<div>
+					<InputCheckbox />
+				</div>
+
+				<div>
+					<Card size="md">Ola mundo </Card>
+				</div>
 			</div>
-
-			<div className="flex gap-1">
-				<Icon svg={TrashIcon} className="fill-pink-dark" />
-				<Icon svg={CheckIcon} className="fill-pink-dark" />
-				<Icon svg={PencilIcon} className="fill-pink-dark" />
-				<Icon svg={PlusIcon} className="fill-pink-dark" />
-				<Icon svg={XIcon} className="fill-pink-dark" />
-				<Icon svg={SpinnerIcon} animate />
-			</div>
-
-			<div>
-				<Badge variant="primary">2 de 5</Badge>
-				<Badge variant="secondary">5</Badge>
-			</div>
-
-			<div>
-				<Button icon={PlusIcon}>Testando butao</Button>
-			</div>
-		</div>
+		</Container>
 	);
 }
